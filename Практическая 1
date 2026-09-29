@@ -1,5 +1,73 @@
+web-3
 метод- GET
 Статус- 304
 Тип- document
 Пользователей- 10
-Заголовок Content-Type указывает MIME-тип ресурса то есть сообщает, в каком формате передаются данные в теле запроса или ответа. Проще говоря, он помогает клиенту и серверу понять, как интерпретировать содержимое
+Заголовок Content-Type указывает MIME-тип ресурса то есть сообщает, в каком формате передаются данные в теле запроса или ответа. 
+Проще говоря, он помогает клиенту и серверу понять, как интерпретировать содержимое
+
+web-4
+комментарии- 5
+у 5 комментариев после postid вышло 5
+
+web-5
+объектов ровно 3
+1- id 1
+2- id 2
+3- id 3
+
+web-6
+postId=3 - 5 ответов
+postId=4 - 5 ответов
+postid показывает на какой странице находится ответ
+
+web-7
+_limit задает ограничение возвращаемым ответам это доказывают следующие два запроса:
+https://jsonplaceholder.typicode.com/posts?_limit=2 количество ответов - 2
+https://jsonplaceholder.typicode.com/posts?_limit=7 количество ответов - 7
+
+web-8
+1 ссылка: https://jsonplaceholder.typicode.com/comments?postId=7&_limit=4
+схема- https
+хост- sonplaceholder.typicode.com
+порт- 443
+путь- -
+query- postId=7&_limit=4
+
+2 ссылка: http://localhost:8080/tasks?page=2&sort=date
+схема- http
+хост- localhost
+порт- 8080
+путь- -
+query- page=2&sort=date
+
+ссылка 3 - https://api.example.com:3000/users/42/posts?status=active
+схема- https
+хост- api.example.com
+порт- 3000
+путь- users/42
+query- status=active
+
+web-9
+Объектов в https://jsonplaceholder.typicode.com/posts?userId=2 ID:10
+Объектов в https://jsonplaceholder.typicode.com/users/2/posts ID:10
+Результат один и тот же , данные добыты разнами путями 
+
+web-10
+1 запрос - https://jsonplaceholder.typicode.com/users/1
+статус - 200
+2 запрос - https://jsonplaceholder.typicode.com/users/11
+статус - 404
+3 запрос - https://jsonplaceholder.typicode.com/users/1?foo=bar
+запрос - 200
+users/11 - эта часть адреса ломает ресурс, так как пользователей всего 10
+
+web-11
+запрос - https://jsonplaceholder.typicode.com/users
+Content-Type - application/json; charset=utf-8 - значение
+Content-Length - 1847 - значение
+
+web-12
+первая страница: 5 объектов; первый id-1
+вторая страница: 5 объектов; первый id-6
+параметр _page показывает нужную страницу при вводе в запросе
